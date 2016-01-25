@@ -5,6 +5,7 @@ from setuptools.command.develop import develop
 
 import subprocess
 import os
+import sys
 
 
 class WhyAreYouSoSloppy(RuntimeError):
@@ -58,7 +59,11 @@ def pun_command(command_class):
                     parts = line.split()
                     if parts[1] == str(parent_pid):
                         # this is hilarious
-                        return '/dev/tty' + parts[6]
+                        if sys.platform.startswith('linux'):
+                            return '/dev/' + parts[6]
+                        elif sys.platform.startswith('darwin'):
+                            return '/dev/tty' + parts[6]
+
             except (subprocess.CalledProcessError, OSError):
                 raise
 
@@ -110,7 +115,7 @@ README = os.path.join(os.path.dirname(__file__), 'README.md')
 
 setup(
     name='requirements-dev.txt',
-    version="0.0.4",
+    version="0.0.5",
     author='Michał Jaworski',
     author_email='swistakm@gmail.com',
     description='Mocking you since 2016',

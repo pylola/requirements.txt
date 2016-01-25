@@ -1,4 +1,4 @@
-.pyc
+*.pyc
 .DS_Store
 dist
-.egg-info
+*.egg-info/
