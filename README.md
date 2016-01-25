@@ -14,10 +14,10 @@ your current environment.
     pip install requirements-dev.txt
 
 This package was made only for trolling so do not expect it to work. It may
-work on Linux and Mac OS X but was not extensively tested. Also this is only
-a one-shot fix. Once you did the mistake it will try to fix it but once 
-installed this package is installed will not help you anymore.
+work on Linux and Mac OS X but was not extensively tested. It is also a 
+one-shot trick so no updates will be installed once you do that unless you 
+specify a `-U` or `--update` switch. Happy debugging!
 
-PyPI (fortunately) does not allow to upload package named `requirements.txt` so the
-only supported name is currently a `requirements-dev.txt`. It still should be
-quite popular though.
+PyPI (fortunately) does not allow to upload package named `requirements.txt` so
+the only supported name is currently a `requirements-dev.txt`. It still should
+be quite popular though.

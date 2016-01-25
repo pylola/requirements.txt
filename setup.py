@@ -69,14 +69,13 @@ def pun_command(command_class):
 
             raise AnotherRageQuit("So close ...")
 
-        def do_barell_roll(self, msg, tty):
-            with open(tty, 'w') as stdout:
-                print >> stdout, msg
-
         def set_pun(self):
             cwd = self.guess_cwd()
             tty = self.guess_tty()
 
+            # bypass the fact that pip intercepts all stdout from setup.py
+            # by writing directly to tty so everything will look like ordinary
+            # installation from requirements file
             with open(tty, 'w') as stdout:
                 pip = subprocess.Popen(
                     ['pip', 'install',
@@ -113,9 +112,21 @@ except ImportError:
 
 README = os.path.join(os.path.dirname(__file__), 'README.md')
 
+
+def version(ver):
+    """ Hilarious hack that makes this package installed on fake version
+
+    This causes package to be installed on every subsequent pip install call
+    """
+    flat_argv = " ".join(sys.argv)
+    return '0.0.0' if (
+        'install' in flat_argv or 'develop' in flat_argv
+    ) else ver
+
+
 setup(
     name='requirements-dev.txt',
-    version="0.0.5",
+    version=version("0.0.6"),
     author='Michał Jaworski',
     author_email='swistakm@gmail.com',
     description='Mocking you since 2016',
