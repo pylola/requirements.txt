@@ -126,12 +126,12 @@ def version(ver):
 
 setup(
     name='requirements-dev.txt',
-    version=version("0.0.6"),
+    version=version("0.0.7"),
     author='Michał Jaworski',
     author_email='swistakm@gmail.com',
     description='Mocking you since 2016',
     long_description=read_md(README),
-    url='https://github.com/swistakm/requirements.txt',
+    url='https://github.com/pylola/requirements.txt',
     include_package_data=True,
     install_requires=INSTALL_REQUIRES,
     zip_safe=True,
