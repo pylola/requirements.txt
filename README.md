@@ -1,23 +1,15 @@
-Ever did a mistake to `pip install` in the terminal when installing packages
-from `requirements.txt` file like following?
+This is a safeguard against typos when running `pip install -r requirements-dev.txt`.
+If you leave out the `-r` by accident, this package will cause your installation
+to abort.
 
-    $ pip install requirements.txt
-    Collecting requirements.txt
-      Could not find a version that satisfies the requirement requirements.txt (from versions: )
-    No matching distribution found for requirements.txt
+    $ pip install requirements-dev.txt
+    Collecting requirements-dev.txt
+    Installing collected packages: requirements-dev.txt
+      Running setup.py install for requirements-dev.txt ... error
+        Complete output from command:
+        running install
+        It looks like you meant to type `pip install -r requirements-dev.txt`,
+        but you left out the `-r` by accident. Aborting installation.
 
-Now you wont. Thanks to some nasty hacks and tricks there is a package on PyPI
-that handles that. It finds the desired requirements file and installs it in
-your current environment.
-
-    echo "gevent" > requirements-dev.txt
-    pip install requirements-dev.txt
-
-This package was made only for trolling so do not expect it to work. It may
-work on Linux and Mac OS X but was not extensively tested. It is also a 
-one-shot trick so no updates will be installed once you do that unless you 
-specify a `-U` or `--update` switch. Happy debugging!
-
-PyPI (fortunately) does not allow to upload package named `requirements.txt` so
-the only supported name is currently a `requirements-dev.txt`. It still should
-be quite popular though.
+PyPI (fortunately) does not allow `requirements.txt` as a package name, so that
+case is handled already.
