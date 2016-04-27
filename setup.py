@@ -34,7 +34,7 @@ README = os.path.join(os.path.dirname(__file__), 'README.md')
 
 setup(
     name='requirements-dev.txt',
-    version="0.0.7",
+    version="1.0.0",
     author='Michał Jaworski',
     author_email='swistakm@gmail.com',
     description='Safeguard against one particullar "pip install" typo',
