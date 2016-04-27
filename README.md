@@ -1,3 +1,5 @@
+[![PyPI](https://img.shields.io/badge/downloads-enough-ff69b4.svg)]()
+
 Ever did a mistake to `pip install` in the terminal when installing packages
 from `requirements.txt` file like following?
 
