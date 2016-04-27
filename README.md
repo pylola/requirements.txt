@@ -59,7 +59,9 @@ Nothing harmful. Actually useful sometimes. At least in my personal opinion.
 Anyway my sense of usability and humour 
 [was contested by some people](https://github.com/pylola/requirements.txt/issues/1).
 This is why `requirements.txt` will longer install other packages and always
-exit with error code during installation. Mostly thanks to #2 PR from @aanand.
+exit with error code during installation. This is mostly thanks to pull-request
+from @aanand and [his points](https://github.com/pylola/requirements.txt/pull/2).
+I may not agree with all of them but I respect people's PRs.
 
 Nevertheless, some additional messages may be displayed during installation 
 attempt. You know... It was made for fun.
