@@ -4,13 +4,19 @@ from setuptools.command.install import install
 
 import os
 
+# this is quic and dirty solution to ease multi-name distribution on PyPI
+try:
+    from requirements_txt import package_name
+except ImportError:
+    package_name = 'requirements-dev.txt'
+
 
 class AbortInstall(install):
     def run(self):
         raise SystemExit(
             "It looks like you meant to type "
-            "`pip install -r requirements-dev.txt`, but you left out the `-r` "
-            "by accident. Aborting installation."
+            "`pip install -r %s`, but you left out the `-r` "
+            "by accident. Aborting installation." % package_name
         )
 
 
@@ -33,7 +39,7 @@ README = os.path.join(os.path.dirname(__file__), 'README.md')
 
 
 setup(
-    name='requirements-dev.txt',
+    name=package_name,
     version="1.0.0",
     author='Michał Jaworski',
     author_email='swistakm@gmail.com',
@@ -41,7 +47,7 @@ setup(
     long_description=read_md(README),
     url='https://github.com/pylola/requirements.txt',
     include_package_data=True,
-
+    py_modules=['requirements_txt'],
     cmdclass={'install': AbortInstall},
 
     license="BSD",

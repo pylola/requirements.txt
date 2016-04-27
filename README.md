@@ -1,4 +1,4 @@
-[![PyPI](https://img.shields.io/badge/downloads-enough-ff69b4.svg)]()
+[![PyPI](https://img.shields.io/badge/downloads-enough-ff69b4.svg)](https://pypi.python.org/pypi?name=requirements-dev.txt)
 
 # requirements.txt
 
@@ -35,7 +35,12 @@ are:
 * `rrequirements-txt`
 
 But it obviously does not cover all popular cases. This is why this sources
-are distributed on PyPI under few popular names that are not forbidden by PyPI.
+are distributed on PyPI under few popular names that are not forbidden by PyPI:
+
+* `requirements-dev.txt`
+* `requirements-dev`
+* `requirements-test.txt`
+* `requirements-test`
 
 
 ## Did it ever happen?
