@@ -55,7 +55,7 @@ crafted `setup.py` script that could:
 * display output that would mimick normal installation process
 
 Newer versions of pip completely swallow all output of package installation
-script but thih behavior can be easily bypassed - at least on OS X and Linux.
+script but this behavior can be easily bypassed - at least on OS X and Linux.
 Also runtime version switch (to `0.0.0`) allowed to install this package over 
 and over becasue there was always newer version available on PyPI. If something 
 went wrong (especially on Windows) it resulted in crypting and rude error message.
