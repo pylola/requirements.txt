@@ -21,7 +21,7 @@ to abort.
 If we had no such package on PyPI, you could accidentally install a package 
 installed with the name of your requirements file. A malicious user could
 register a package that would mimic proper installation process and also
-launch anny arbitrary code.
+launch any arbitrary code.
 
 
 PyPI (fortunately) does not allow `requirements.txt` as a package name, so that
@@ -34,8 +34,8 @@ are:
 * `requirements-txt`
 * `rrequirements-txt`
 
-But it obviously does not cover all popular cases. This is why this sources
-are distributed on PyPI under few popular names that are not forbidden by PyPI:
+But it obviously does not cover all popular cases. This is why these sources
+are distributed on PyPI under a few popular names that are not forbidden by PyPI:
 
 * `requirements-dev.txt`
 * `requirements-dev`
@@ -52,13 +52,13 @@ crafted `setup.py` script that could:
 
 * look on your filesystem to find a requirements file you intended to install
 * install all packages in another pip subprocess
-* display output that would mimick normal installation process
+* display output that would mimic normal installation process
 
 Newer versions of pip completely swallow all output of package installation
 script but this behavior can be easily bypassed - at least on OS X and Linux.
 Also runtime version switch (to `0.0.0`) allowed to install this package over 
-and over becasue there was always newer version available on PyPI. If something 
-went wrong (especially on Windows) it resulted in crypting and rude error message.
+and over because there was always newer version available on PyPI. If something 
+went wrong (especially on Windows) it resulted in a cryptic and rude error message.
 
 Nothing harmful. Actually useful sometimes. At least in my personal opinion. 
 Anyway my sense of usability and humour 
